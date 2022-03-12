@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="d-flex justify-content-between">
+            <div>
+                <button class=" btn btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#filter-item">filter</button>
+                
+            </div>
+            <div>
+                <button>1</button>
+                <button>2</button>
+            </div>
+        </div>
+    </div>
+    <div id="filter-item" class="collapse m-1 filter-item">
+        <div class="d-flex">
+            <div class="m-1">
+                <input placeholder="Name">
+                <input class="mx-2" placeholder="Genres">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row d-flex" *ngFor="let item of chunked">
+            <div class="col" *ngFor="let i of item">
+                <div>
+                    <h3>{{i.name}}</h3>
+                    <p>{{i.tagsIds}}</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="col d-flex justify-content-center">
+        <ul class="pagination">
+            <li class="page-item"><button class="page-link" (click)="pagiClick(-1)">Previous</button></li>
+            <li class="page-item disabled"><button class="page-link" href="#">{{pageNumber}}</button></li>
+            <li class="page-item"><button class="page-link" (click)="pagiClick(1)">Next</button></li>
+          </ul>
+    </div>
+</div>

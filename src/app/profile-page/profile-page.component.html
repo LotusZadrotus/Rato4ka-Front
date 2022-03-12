@@ -1,0 +1,55 @@
+
+<div class="conteiner-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col-sm-3">
+                    <img/>
+                    <div class="d-flex justify-content-center" *ngIf="user?.isOwned">
+                        <button class="btn-primary">Edit profile</button>
+                        <button class="btn-primary">Sign out</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <h1 calss="text-white" style="color: white;">{{user?.name}}</h1>
+                    <p style="color: white;">Login: {{user?.login}}</p>
+                    <p style="color: white;">Email: {{user?.email}}</p>
+                    <p style="color: white;">Discord ID:{{user?.discordId}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col">
+            <h1 style="color: white;">Latest updates: </h1>
+            <div class="p-2">
+                <div class="row up_icon p-2">
+                    <div class="d-flex">
+                        <img src="1" class="p-1"/>
+                        <div class="p-1">
+                            <p style="color: white;">Name</p>
+                            <p style="color: white;">Desc...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h1 style="color: white;">Latest scores: </h1>
+            <div class="p-2">
+                <div class="row up_icon p-2">
+                    <div class="d-flex">
+                        <img src="1" class="p-1"/>
+                        <div class="p-1">
+                            <p style="color: white;">Name</p>
+                            <p style="color: white;">Score</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

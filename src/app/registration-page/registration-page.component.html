@@ -1,0 +1,39 @@
+<div class="container-fluid row">
+    <div class="col-sm d-flex flex-column justify-content-left">
+        <h1 class="text-white">REGISTRATION</h1>
+            <form class="" [formGroup]="registrationForm" (ngSubmit)="onSubmit(registrationForm.value) " novalidate>
+                <div class="form-group">
+                    <div class="mb-3 mt-3">
+                        <label for="login" class="form-label text-white">Login:</label>
+                        <input type="login" class="form-control" id="login" placeholder="Enter login" name="login" formControlName="login" required>
+                        <small id="er1" *ngIf="login.invalid && isSubmited" class="form-text text-red">Login is required</small>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <div class="mb-3 mt-3">
+                        <label for="email" class="form-label text-white">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" formControlName="email">
+                        <small id="er1" *ngIf="email.invalid && isSubmited" class="form-text text-red">Email is required</small>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <div class="mb-3 mt-3">
+                        <label for="password" class="form-label text-white">Password:</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter password" formControlName="password">
+                        <small id="er1" *ngIf="!passwordConfirming && isSubmited" class="form-text text-red">password must match</small>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <div class="mb-3 mt-3">
+                        <label for="password-confirm" class="form-label text-white">Confirm password:</label>
+                        <input type="password" class="form-control" id="password-confirm" placeholder="Confirm password" formControlName="confirmPassword">
+                      </div>
+                </div>
+                <div class="d-flex flex-row-reverse">
+                    <button type="submit" class="btn btn-primary">Registrate</button>
+                </div>
+            </form>
+    </div>
+    
+    <div class="col-sm"></div> 
+</div>

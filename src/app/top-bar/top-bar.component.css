@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+.nav-item{
+    /* width: 20px; */
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+.logo-font{
+    font-size: 27px;
+}
+.navbar{
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.42);
+}
+/* .lg{
+    box-shadow: 4px 4px 8px 0px rgba(7, 27, 43, 0.42);
+} */
+.pfp{
+    width: 40px;
+    height: 40px;
+}

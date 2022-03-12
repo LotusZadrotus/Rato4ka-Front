@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    /* Margin bottom by footer height */
+    /* margin-bottom: 60px;
+    background: linear-gradient(121.14deg, rgba(251, 251, 251, 0.71) -0.82%, #232323 -0.82%, rgba(16, 34, 61, 0.96) -0.73%, rgba(55, 91, 145, 0.86) 85.72%); */
+    background: rgb(47,64,105) !important;
+    /* background: linear-gradient(90deg, rgba(47,64,105,1) 0%, rgba(90,112,159,0.9304096638655462) 43%, rgba(105,113,200,1) 100%); */
+  }
