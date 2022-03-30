@@ -1,6 +1,8 @@
+import { Binary } from "@angular/compiler";
+
 export class User{
     id: number;
-    avatar: string|undefined;
+    avatar: ArrayBuffer|undefined;
     discordId: string|undefined;
     password: string|undefined;
     email: string;
@@ -9,7 +11,7 @@ export class User{
     login: string;
     salt: string|undefined;
     confirmed: boolean;
-    constructor(id: number, avatar: string |undefined, discordId: string|undefined, password: string|undefined, email: string, isadmin:boolean, name: string, login: string, salt: string|undefined, confirmed: boolean){
+    constructor(id: number, avatar: ArrayBuffer |undefined, discordId: string|undefined, password: string|undefined, email: string, isadmin:boolean, name: string, login: string, salt: string|undefined, confirmed: boolean){
         this.id = id;
         this.avatar = avatar;
         this.discordId = discordId;

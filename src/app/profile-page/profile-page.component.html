@@ -3,28 +3,52 @@
     <div class="row">
         <div class="col">
             <div class="row">
-                <div class="col-sm-3">
-                    <img/>
-                    <div class="d-flex justify-content-center" *ngIf="user?.isOwned">
-                        <button class="btn-primary">Edit profile</button>
-                        <button class="btn-primary">Sign out</button>
+                <div class="col-sm-3" style="min-width: 180px; max-width: 180px;">
+                    <div class="col-sm d-flex justify-content-center" >
+                        <img  src="https://localhost:5001/api/User/GetImage/1" style="width: 180px; height: 180px;">
+                        <!-- <img [ngIf]="user?.avatar !== undefined"> -->
+                        <!-- <a *ngIf="edit" href="#" class="stretched-link" style="position: relative;"></a> -->
+                        
+                    </div>
+                    <div class="d-flex justify-content-center my-2" *ngIf="user?.isOwned">
+                        <button class="btn-primary btn-pfp" (click)="editMode()" >Edit profile</button>
+                        <button class="btn-primary btn-pfp">Sign out</button>
                     </div>
                 </div>
-                <div class="col">
-                    <h1 calss="text-white" style="color: white;">{{user?.name}}</h1>
-                    <p style="color: white;">Login: {{user?.login}}</p>
+                <div class="col my-2">
+                    <h1 calss="text-white" style="color: white;">
+                        <input #usrname type="text" [disabled]="!edit" value="{{user?.name}}" style="background-color: transparent;border: 0;color: white;">
+                        <button class="btn-ctr" *ngIf="edit" (click)="acpUserName(usrname.value)"><fa-icon [icon]="faCheck"></fa-icon></button>
+                        <button class="btn-ctr" *ngIf="edit" (click)="usrname.value = user?.name!"><fa-icon [icon]="faX"></fa-icon></button>
+                    </h1>
+                    <p *ngIf="user?.isOwned" style="color: white;">Login: {{user?.login}}</p>
                     <p style="color: white;">Email: {{user?.email}}</p>
                     <p style="color: white;">Discord ID:{{user?.discordId}}</p>
+                    <p *ngIf="edit" style="color: white;">Change pfp: <input   id="img-input" type="file" accept="image/*" placeholder="img" (change)="onChange($event)"/>
+                        <button class="btn-ctr" *ngIf="edit" (click)="Upload()"><fa-icon [icon]="faCheck"></fa-icon></button>
+                    </p>
+                    
                 </div>
             </div>
         </div>
-        <div class="col-2">
-            
-        </div>
+
     </div>
     <div class="row mt-4">
-        <div class="col">
+        <div class="col act-col" style="max-height: 150px;">
             <h1 style="color: white;">Latest updates: </h1>
+            <div class="fixed-content">
+                
+            <div class="p-2 mx-2">
+                <div class="row up_icon p-2">
+                    <div class="d-flex">
+                        <img src="1" class="p-1"/>
+                        <div class="p-1">
+                            <p style="color: white;">Name</p>
+                            <p style="color: white;">Desc...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="p-2">
                 <div class="row up_icon p-2">
                     <div class="d-flex">
@@ -35,6 +59,40 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="p-2">
+                <div class="row up_icon p-2">
+                    <div class="d-flex">
+                        <img src="1" class="p-1"/>
+                        <div class="p-1">
+                            <p style="color: white;">Name</p>
+                            <p style="color: white;">Desc...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="row up_icon p-2">
+                    <div class="d-flex">
+                        <img src="1" class="p-1"/>
+                        <div class="p-1">
+                            <p style="color: white;">Name</p>
+                            <p style="color: white;">Desc...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="row up_icon p-2">
+                    <div class="d-flex">
+                        <img src="1" class="p-1"/>
+                        <div class="p-1">
+                            <p style="color: white;">Name</p>
+                            <p style="color: white;">Desc...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
         <div class="col">

@@ -21,10 +21,14 @@
     </div>
     <div class="row">
         <div class="row d-flex" *ngFor="let item of chunked">
-            <div class="col" *ngFor="let i of item">
-                <div>
-                    <h3>{{i.name}}</h3>
-                    <p>{{i.tagsIds}}</p>
+            <div class="col my-2" *ngFor="let i of item">
+                <div class="card">
+                    <img class="card-img-top" src="../../assets/defaul-img.jpg">
+                    <div class="card-body">
+                        
+                        <h3>{{i.name}}</h3>
+                        <p>{{i.tagsIds}}</p>
+                    </div>
                 </div>
             </div>
             

@@ -46,4 +46,7 @@ export class UserService{
                 )
             
     )}
+    updateUser(user: User){
+        return this.http.put(`${environment.apiUrl}/User/UpdateUser`, user)
+    }
 }

@@ -14,6 +14,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from '../api/token.interceptor';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MainPageComponent } from './main-page/main-page.component';
     FormsModule,
     ReactiveFormsModule,
     ApiModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,

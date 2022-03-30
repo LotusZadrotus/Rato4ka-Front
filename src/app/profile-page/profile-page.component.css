@@ -2,3 +2,35 @@
     border: solid 1px;
     border-color: black;
 }
+.btn-pfp{
+    border: 0ch;border-color:transparent; background-color: rgb(78, 100, 151);outline: none;
+}:focus{
+    outline: none;
+}
+.fixed-content {
+    /* top: 0;
+    bottom:0;
+    /* position:fixed; */
+    overflow-y:scroll;
+    overflow-x:hidden; 
+    width: 100%;
+    height: 100%;
+}
+::-webkit-scrollbar {
+    width: 1em;
+  }
+   
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+  .btn-ctr{
+    background: transparent !important;
+    outline: none;
+    border: 0ch;
+    color: white;
+  }
