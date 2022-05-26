@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { ContentService } from '../../api/services/content.service';
 import { Content } from '../../models/Content';
 
@@ -13,6 +14,7 @@ export class MainPageComponent implements OnInit {
     this.pageNumber = 1;
     this.max_pages = 1;
   }
+  public apiUrl = `${environment.apiUrl}`;
   public max_pages: number;
   chunked: any| undefined;
   ngOnInit(): void {

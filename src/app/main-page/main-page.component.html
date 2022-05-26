@@ -23,11 +23,13 @@
         <div class="row d-flex" *ngFor="let item of chunked">
             <div class="col my-2" *ngFor="let i of item">
                 <div class="card">
-                    <img class="card-img-top" src="../../assets/defaul-img.jpg">
+                    <!-- <img class="card-img-top" src="../../assets/defaul-img.jpg"> -->
+                    <img class="card-img-top" src="{{apiUrl}}/Content/image/{{i.imageURL}}">
                     <div class="card-body">
                         
                         <h3>{{i.name}}</h3>
-                        <p>{{i.tagsIds}}</p>
+                        <!-- <p>{{i.tagsIds}}</p> -->
+                        <a class="stretched-link" [routerLink]="['/content']" [queryParams]="{id: i.id}"></a>
                     </div>
                 </div>
             </div>

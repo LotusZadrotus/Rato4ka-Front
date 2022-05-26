@@ -15,6 +15,7 @@ import { AuthInterceptor } from '../api/token.interceptor';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ContentPageComponent } from './content-page/content-page.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     LoginPageComponent,
     BottomBarComponent,
     ProfilePageComponent,
-    MainPageComponent
+    MainPageComponent,
+    ContentPageComponent
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,8 @@ export class Content{
         public createdAt : Date|undefined;
         public releaseDate : Date|undefined;
         public desc: string|undefined;
-        constructor(id: number|undefined, name:string|undefined, tags: []|undefined, creatorId: number|undefined, createdAt: Date|undefined, releaseDate: Date|undefined, desc: string|undefined){
+        public imageURL: string|undefined;
+        constructor(id: number|undefined, name:string|undefined, tags: []|undefined, creatorId: number|undefined, createdAt: Date|undefined, releaseDate: Date|undefined, desc: string|undefined, imageURL: string|undefined){
             this.id =id;
             this.name = name;
             this.tagsIds = tags;
@@ -14,5 +15,6 @@ export class Content{
             this.createdAt = createdAt;
             this.releaseDate = releaseDate;
             this.desc = desc;
+            this.imageURL = imageURL;
         }
 }

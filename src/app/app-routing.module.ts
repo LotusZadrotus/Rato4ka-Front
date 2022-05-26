@@ -4,6 +4,7 @@ import { RegistrationPageComponent } from './registration-page/registration-page
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { ContentPageComponent } from './content-page/content-page.component';
 
 const routes: Routes = [
   {path: 'registration', component: RegistrationPageComponent},{
@@ -12,6 +13,8 @@ const routes: Routes = [
     path: 'user', component: ProfilePageComponent
   },{
     path: '', component: MainPageComponent
+  },{
+    path: 'content', component: ContentPageComponent
   }
 ];
 

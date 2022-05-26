@@ -23,12 +23,16 @@ export class AuthService{
                   }
                   localStorage.setItem(this.loginStorageKey, response.login)
                   localStorage.setItem(this.tokenStorageKey, response.access_token)
+                  
+
+                  this.router.navigate(["/"])
             })
         );
     }
     logout(): void {
         localStorage.removeItem(this.tokenStorageKey);
-        this.router.navigate(["/login"]);
+        
+        window.location.reload();
       }
     get token(){
         return localStorage.getItem(this.tokenStorageKey)

@@ -27,8 +27,21 @@ export class ContentService{
                         item.creatorId,
                         item.createdAt,
                         item.releaseDate,
-                        item.desc
+                        item.desc,
+                        item.imageURL
                     )
                 })
             }))
-}}
+    }
+    getContentById(id: number): Observable<Content>{
+        return this.http.get<Content>(`${environment.apiUrl}/content/GetContentById/${id}`).pipe(
+            map((resp:any)=>{
+                // console.log(resp);
+                // console.log(resp[0].user.id);
+                
+                // return new Content(resp.id,resp.name, undefined, undefined, resp.createdAt, resp.releaseDate, undefined)
+                return resp;
+            })
+        )
+    }
+}

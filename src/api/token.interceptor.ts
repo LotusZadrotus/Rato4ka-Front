@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HTTP_INTERCEPTORS, HttpRequest, HttpInterceptor, HttpEvent, HttpHandler } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HTTP_INTERCEPTORS, HttpRequest, HttpInterceptor, HttpEvent, HttpHandler, HttpErrorResponse } from '@angular/common/http';
+import { catchError, Observable, throwError } from 'rxjs';
+import { AuthService } from './services/auth.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
+    constructor(private auth: AuthService){}
     intercept(req: HttpRequest<any>,
               next: HttpHandler): Observable<HttpEvent<any>> {
 
@@ -16,7 +18,16 @@ export class AuthInterceptor implements HttpInterceptor {
                   }
             });
 
-            return next.handle(cloned);
+            return next.handle(cloned).pipe(
+                catchError((error :HttpErrorResponse)=>{
+                    if(error.status === 401){
+                        this.auth.logout();
+                        console.log("Error");
+                        
+                    }
+                    return throwError("")
+                })
+            );
         }
         else {
             return next.handle(req);

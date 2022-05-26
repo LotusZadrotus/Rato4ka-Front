@@ -5,6 +5,7 @@ import { UserService } from '../../api/services/user.service';
 import { faCheck, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { User } from 'src/models/User';
 import { Observable } from 'rxjs';
+import { AuthService } from '../../api/services/auth.service';
 
 @Component({
   selector: 'app-profile-page',
@@ -13,7 +14,7 @@ import { Observable } from 'rxjs';
 })
 export class ProfilePageComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private UserService: UserService) {
+  constructor(private route: ActivatedRoute, private UserService: UserService, private auth: AuthService) {
     this.edit = false;
    }
   public id: any;
@@ -48,7 +49,7 @@ export class ProfilePageComponent implements OnInit {
       )
     })
     
-    
+    window.location.reload();
     
   }
   onChange(event:any){
@@ -60,6 +61,10 @@ export class ProfilePageComponent implements OnInit {
     this.UserService.updateUser(new User(this.user?.id!, this.user?.avatar, this.user?.discordId, this.user?.password, this.user?.email!, this.user?.isadmin!, usrname, this.user?.login!, this.user?.salt!, this.user?.confirmed!)).subscribe(
       s=>{this.obs?.subscribe(x=>this.user = x)}
     )
+    
+  }
+  signOut(){
+    this.auth.logout();
     
   }
 }
